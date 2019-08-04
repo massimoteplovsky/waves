@@ -38,7 +38,7 @@ const useMulter = multer({ storage: fileStorage, fileFilter: fileFilter }).singl
 const app = express();
 require("dotenv").config();
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DATABASE, { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 mongoose.set('useFindAndModify', false);
 
 app.use(bodyParser.urlencoded({extended: true}));
